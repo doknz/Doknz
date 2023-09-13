@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>دوكن</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="موقع دوكن لأحدث الأفلام والمسلسلات والانمي">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js" defer></script>
+    <style>
+        /* الأسلوب العام للصفحة */
+        body {
+            font-family: 'Tajawal', Arial, sans-serif;
+            background-image: url('background.jpg'); /* رابط الصورة الخلفية */
+            background-size: cover; /* لتغطية الشاشة بالكامل */
+            background-repeat: no-repeat; /* لعدم تكرار الصورة */
+            background-attachment: fixed; /* تجعل الصورة ثابتة عند التمرير */
+            margin: 0;
+            padding: 0;
+        }
+    
+        /* ترويسة الموقع */
+        header {
+            background-color: #333;
+            color: hsl(0, 94%, 46%);
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* عنوان الصفحة */
+        h1 {
+            margin: 0;
+        }
+
+        /* منطقة العرض للأفلام والمسلسلات */
+        .content {
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center; /* توسيط المحتوى */
+        }
+
+        /* قائمة لعرض الأفلام والمسلسلات */
+        .movie-list {
+            list-style-type: none;
+            padding: 0;
+            text-align: center; /* توسيط العناصر */
+        }
+
+        .movie-item {
+            margin: 10px;
+        }
+        .head-center {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        /* المربعات الحمراء */
+        a {
+            text-decoration: none;
+            color: #333;
+            display: block;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: red;
+            transition: background-color 0.3s;
+            font-size: 25px; /* تكبير حجم الخط داخل المربعات الحمراء */
+        }
+
+        a:hover {
+            background-color: gold;
+        }
+
+        /* توسيط عنوان الأفلام والمسلسلات والانمي */
+        h2 {
+            text-align: center;
+        }
+
+        /* مربع البحث */
+        .search-box {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 100%; /* يمتلئ عرض الشاشة بالكامل */
+            max-width: 300px; /* حد أقصى لعرض المربع */
+        }
+
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* تعديل للشاشات الصغيرة (تقنية التجاوب) */
+        @media (max-width: 600px) {
+            h2 {
+                font-size: 24px; /* تصغير حجم العنوان للهواتف الصغيرة */
+            }
+            .search-box {
+                margin-top: 10px;
+            }
+        }
+    </style>
+    <!-- تضمين الخط العربي Tajawal -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400&display=swap">
+</head>
+<body>
+    <header>
+        <h1>دوكن</h1>
+    </header>
+    <div class="content">
+        <h2>TeleBox</h2>
+        <h3>هذه القائمة للناس الي عندهم التطبيق و حابين يشاهدو عن طريق التطبيق<br><span>القائمة فيها المسلسلات و الانمي و الافلام فقط ابحث وحتلاقي</span></h3>
+        <!-- مربع البحث -->
+        <div class="search-box">
+            <form action="#" method="get" id="searchForm">
+                <input type="text" name="search" id="searchInput" placeholder="              عزيزي المشاهد عشان ما تضيع ابحث هنا">
+            </form>
+        </div>
+        <!-- نتائج البحث -->
+        <div class="search-results" id="searchResults">
+            <!-- هنا سيتم عرض نتائج البحث -->
+        </div>
+        <!-- قائمة الأفلام والمسلسلات الأخرى -->
+        <ul class="head-center"><a href="index.html">الصفحة الرئيسية</a></ul>
+        <ul class="head-center"><a href="https://apps.apple.com/us/app/telebox-cloud-file-storage/id6447232515" target="_blank">رابط تحميل التطبيق على الايفون</a></ul>
+        <ul class="head-center"><a href="https://play.google.com/store/apps/details?id=com.linkbox.plus.android&hl=ar&gl=US" target="_blank">رابط تحميل التطبيق على قوقل بلاي</a></ul>
+        <ul class="head-center"><a href="https://static.telebox.online/static_src/apk/telebox_gp_1.32.06_13206001_20230731185923_release.apk" target="_blank">رابط تحميل تطبيق مباشر لجميع اجهزة الاندرويد</a></ul>
+        <ul class="movie-list">
+            <!-- إضافة العناصر هنا -->
+            <li class="movie-item"><a href=".html"> انمي ون بيس كامل<br><span>One Piece Anime</span></a></li>
+            <li class="movie-item"><a href=".html"> انمي ناروتو شيبودن كامل<br><span>Naruto Shippuden</span></a></li>
+            <li class="movie-item"><a href=".html">مذكرة الموت - ديث نوت <br><span>Death Note Anime</span></a></li>
+            <li class="movie-item"><a href=".html">القناص - هنتر اكس هنتر<br><span>HunterxHunter</span></a></li>
+            <li class="movie-item"><a href=".html">انمي بليتش الموسم الثاني كامل<br><span>BleachS2</span></a></li>
+            <li class="movie-item"><a href=".html">Oppenheimer</a></li>
+            <li class="movie-item"><a href=".html">انمي ستينس جيت كامل<br><span>Steins Gate Anime</span></a></li>
+            <li class="movie-item"><a href=".html">انمي طوكيو ريفنجرز كامل<br><span>Tokyo Revengers Anime</span></a></li>
+            <li class="movie-item"><a href=".html">انمي بوكو نو هيرو كامل<br><span>Boku No Hero</span></a></li>
+            <li class="movie-item"><a href=".html">انمي كوروكو نو باسكت كامل<br><span>Kuroko No Basket</span></a></li>
+            <li class="movie-item"><a href=".html">انمي قاتل الشياطين<br><span>Demon Slayer - Kimetsu No Yaiba</span></a></li>
+            <li class="movie-item"><a href=".html">انمي سونيك برايم كامل<br><span>Sonic Prime anime</span></a></li>
+            <li class="movie-item"><a href=".html">الكيميائي المعدني<br><span>Fullmetal Allchemist</span></a></li>
+            <li class="movie-item"><a href=".html">انمي اوفرلورد كامل<br><span>OverLord Anime</span></a></li>
+            <li class="movie-item"><a href=".html">انمي بلاك كلوفر كامل<br><span>Black Clover Anime</span></a></li>
+            <li class="movie-item"><a href=".html">انمي بلو لوك كامل<br><span>Blue Lock Anime</span></a></li>
+            <li class="movie-item"><a href=".html">انمي جوجوتسو كايسن كامل<br><span>Jujutsu Kaisen Anime</span></a></li>
+            <li class="movie-item"><a href=".html">انمي رجل اللكمة الواحدة كامل - ون بينش مان<br><span>One Punch Man Anime</span></a></li>
+            <li class="movie-item"><a href=".html">انمي رجل المنشار كامل<br><span>Chainsaw Man Anime</span></a></li>
+            <li class="movie-item"><a href=".html">انمي سباي اكس فاملي كامل <br><span>SPYxFAMILY Anime</span></a></li>
+            <li class="movie-item"><a href=".html">انمي باكي كامل<br><span>Baki Anime</span></a></li>
+            <li class="movie-item"><a href=".html">انمي اشورا كامل<br><span>ِAshura Kengan Anime</span></a></li>
+            <li class="movie-item"><a href=".html">انمي طوكيو غول كامل<br><span>Tokyo Ghoul Anime</span></a></li>
+            <li class="movie-item"><a href=".html">انمي دكتور ستون كامل<br><span>DR.Stoen Anime</span></a></li>
+            <li class="movie-item"><a href=".html">انمي مونستر كامل<br><span>Monster Anime</span></a></li>
+            <li class="movie-item"><a href=".html">انمي هايكيو كامل<br><span>Haikyuu Anime</span></a></li>
+            <li class="movie-item"><a href=".html">Fifty Shades Of Grey</a></li>
+            <li class="movie-item"><a href=".html">The Equalizer All Seasons</a></li>
+            <li class="movie-item"><a href=".html">Forrest Gump></a></li>
+            <li class="movie-item"><a href=".html">Jurassic World All Seasons</a></li>
+            <li class="movie-item"><a href=".html">Pitch Perfect All Seasons</a></li>
+            <li class="movie-item"><a href=".html">Shrek All Seasons</a></li>
+            <li class="movie-item"><a href=".html">Peaky Blinders All Seasons</a></li>
+            <li class="movie-item"><a href=".html">Creed All Seasons</a></li>
+            <li class="movie-item"><a href=".html">Resident Evill All Seasons</a></li>
+            <li class="movie-item"><a href=".html">Iron Man All Seasons</a></li>
+            <li class="movie-item"><a href=".html">Black Panther Wakanda Forever</a></li>
+            <li class="movie-item"><a href=".html">Spider Man across the spider verse</a></li>
+            <li class="movie-item"><a href=".html">مسرحية صفقة بمليون دولار</a></li>
+            <li class="movie-item"><a href=".html">مسرحية سك على بناتك</a></li>
+            <li class="movie-item"><a href=".html">مسرحية عش المجانين</a></li>
+            <li class="movie-item"><a href=".html">مسرحية سيف العرب</a></li>
+            <li class="movie-item"><a href=".html">مسرحية شارع محمد علي</a></li>
+            <li class="movie-item"><a href=".html">مسرحية البيت المسكون</a></li>
+            <li class="movie-item"><a href=".html">فيلم راس براس</a></li>
+            <li class="movie-item"><a href=".html">افلام العراب <br><span>The GodFather All Seasons</span></a></li>
+            <li class="movie-item"><a href=".html">مسلسل ناركوس كامل <br><span>Narcos All Seasons</span></a></li>
+            <li class="movie-item"><a href=".html">Elite All Seasons</a></li>
+            <li class="movie-item"><a href=".html">مسلسل لوكي كامل <br><span>Loki All Seasons</span></a></li>
+            <li class="movie-item"><a href=".html">مسلسل ذا ويتشر كامل<br><span>The Witcher All Seasons</span></a></li>
+            <li class="movie-item"><a href=".html">Sex Eduction All Seasons</a></li>
+            <li class="movie-item"><a href=".html">Better Call Saul All Seasons</a></li>
+            <li class="movie-item"><a href=".html">House Of The Dragon</a></li>
+            <li class="movie-item"><a href=".html">La Casa De Papel All Seasons - Money Heist</a></li>
+            <li class="movie-item"><a href=".html">Breaking Bad All Seasons</a></li>
+            <li class="movie-item"><a href=".html">مسلسل 1899</a></li>
+            <li class="movie-item"><a href=".html">فايكنج فلاهالا <br><span>Vikings Vallhala</span></a></li>
+            <li class="movie-item"><a href=".html">Stranger Things All Seasons</a></li>
+            <li class="movie-item"><a href=".html">Wednesday</a></li>
+            <li class="movie-item"><a href=".html">Daredevil</a></li>
+            <li class="movie-item"><a href=".html">لعبة الحبار <br><Span>Squad Game</Span></a></li>
+            <li class="movie-item"><a href=".html">Band Of Brothers</a></li>
+            <li class="movie-item"><a href=".html">لعبة العروش <br><span>Game Of Thrones</span></a></li>
+            <li class="movie-item"><a href=".html">Meg Movie All Seasons</a></li>
+            <li class="movie-item"><a href=".html">Blacklist All Seasons</a></li>
+            <li class="movie-item"><a href=".html">The Lord Of The Rings : The Rings Of Power</a></li>
+            <li class="movie-item"><a href=".html">Black Snow</a></li>
+            <li class="movie-item"><a href=".html">Gypsy</a></li>
+            <li class="movie-item"><a href=".html">Halo</a></li>
+            <li class="movie-item"><a href=".html">Hijack</a></li>
+            <li class="movie-item"><a href=".html">Debris</a></li>
+            <li class="movie-item"><a href=".html">Taboo</a></li>
+            <li class="movie-item"><a href=".html">Being Mary jane</a></li>
+            <li class="movie-item"><a href=".html">The Lord OF The Rings <br><span>سلسلة الافلام</span></a></li>
+            <li class="movie-item"><a href=".html">ٌRiverdale All Seasons</a></li>
+
+
+
+
+
+
+
+
+            <!-- يمكنك إضافة المزيد من الأفلام والمسلسلات هنا -->
+        </ul>
+    </div>
+<script src="scripit.js"></script>
+<script>
+    // احصل على العناصر داخل القائمة
+    var movieList = document.querySelector(".movie-list");
+
+    // احصل على الروابط داخل القائمة وقم بتحويلها إلى مصفوفة
+    var links = Array.from(movieList.querySelectorAll("a"));
+
+    // قم بفرز المصفوفة بالترتيب الأبجدي
+    links.sort(function(a, b) {
+        return a.textContent.localeCompare(b.textContent);
+    });
+
+    // قم بإعادة ترتيب الروابط داخل القائمة
+    links.forEach(function(link) {
+        movieList.appendChild(link.parentElement);
+    });
+</script>
+</body>
+</html>
+</body>
+</head>
+</html>
