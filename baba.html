@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>دوكن</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="موقع دوكن لأحدث الأفلام والمسلسلات والانمي">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js" defer></script>
+    <style>
+        /* الأسلوب العام للصفحة */
+        body {
+            font-family: 'Tajawal', Arial, sans-serif;
+            background-image: url('background.jpg'); /* رابط الصورة الخلفية */
+            background-size: cover; /* لتغطية الشاشة بالكامل */
+            background-repeat: no-repeat; /* لعدم تكرار الصورة */
+            background-attachment: fixed; /* تجعل الصورة ثابتة عند التمرير */
+            margin: 0;
+            padding: 0;
+        }
+    
+        /* ترويسة الموقع */
+        header {
+            background-color: #333;
+            color: hsl(0, 94%, 46%);
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* عنوان الصفحة */
+        h1 {
+            margin: 0;
+        }
+
+        /* منطقة العرض للأفلام والمسلسلات */
+        .content {
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center; /* توسيط المحتوى */
+        }
+
+        /* قائمة لعرض الأفلام والمسلسلات */
+        .movie-list {
+            list-style-type: none;
+            padding: 0;
+            text-align: center; /* توسيط العناصر */
+        }
+
+        .movie-item {
+            margin: 10px;
+        }
+
+        /* المربعات الحمراء */
+        a {
+            text-decoration: none;
+            color: #333;
+            display: block;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: red;
+            transition: background-color 0.3s;
+            font-size: 25px; /* تكبير حجم الخط داخل المربعات الحمراء */
+        }
+
+        a:hover {
+            background-color: gold;
+        }
+
+        /* توسيط عنوان الأفلام والمسلسلات والانمي */
+        h2 {
+            text-align: center;
+        }
+
+        /* مربع البحث */
+        .search-box {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 100%; /* يمتلئ عرض الشاشة بالكامل */
+            max-width: 300px; /* حد أقصى لعرض المربع */
+        }
+
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* تعديل للشاشات الصغيرة (تقنية التجاوب) */
+        @media (max-width: 600px) {
+            h2 {
+                font-size: 24px; /* تصغير حجم العنوان للهواتف الصغيرة */
+            }
+            .search-box {
+                margin-top: 10px;
+            }
+        }
+    </style>
+    <!-- تضمين الخط العربي Tajawal -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400&display=swap">
+</head>
+<body>
+    <header>
+        <h1>دوكن</h1>
+    </header>
+    <div class="content">
+        <h2>مسلسلات العربية</h2>
+        <!-- مربع البحث -->
+        <div class="search-box">
+            <form action="#" method="get" id="searchForm">
+                <input type="text" name="search" id="searchInput" placeholder="                           ابحث عن رقم الحلقة">
+            </form>
+        </div>
+        <!-- نتائج البحث -->
+        <div class="search-results" id="searchResults">
+            <!-- هنا سيتم عرض نتائج البحث -->
+        </div>
+        <!-- قائمة الأفلام والمسلسلات الأخرى -->
+        <ul class="movie-list">
+            <!-- إضافة العناصر هنا -->
+            <li class="movie-item"><a href="index.html">الصفحة الرئيسية</a></li>
+            <li class="movie-item"><a href="arabicseries.html">رجوع</a></li>
+            <li class="movie-item"><a href="baba1.html">الحلقة 1</a></li>
+            <li class="movie-item"><a href="baba2.html">الحلقة 2</a></li>
+            <li class="movie-item"><a href="baba3.html">الحلقة 3</a></li>
+            <li class="movie-item"><a href="baba4.html">الحلقة 4</a></li>
+            <li class="movie-item"><a href="baba5.html">الحلقة 5</a></li>
+            <li class="movie-item"><a href="baba6.html">الحلقة 6</a></li>
+            <li class="movie-item"><a href="baba7.html">الحلقة 7</a></li>
+            <li class="movie-item"><a href="baba8.html">الحلقة 8</a></li>
+            <li class="movie-item"><a href="baba9.html">الحلقة 9</a></li>
+            <li class="movie-item"><a href="baba10.html">الحلقة 10</a></li>
+            <li class="movie-item"><a href="baba11.html">الحلقة 11</a></li>
+            <li class="movie-item"><a href="baba12.html">الحلقة 12</a></li>
+            <li class="movie-item"><a href="baba13.html">الحلقة 13</a></li>
+            <li class="movie-item"><a href="baba14.html">الحلقة 14</a></li>
+            <li class="movie-item"><a href="baba15.html">الحلقة 15</a></li>
+            <li class="movie-item"><a href="baba16.html">الحلقة 16</a></li>
+            <li class="movie-item"><a href="baba17.html">الحلقة 17</a></li>
+            <li class="movie-item"><a href="baba18.html">الحلقة 18</a></li>
+            <li class="movie-item"><a href="baba19.html">الحلقة 19</a></li>
+            <li class="movie-item"><a href="baba20.html">الحلقة 20</a></li>
+            <li class="movie-item"><a href="baba21.html">الحلقة 21</a></li>
+            <li class="movie-item"><a href="baba22.html">الحلقة 22</a></li>
+            <li class="movie-item"><a href="baba23.html">الحلقة 23</a></li>
+            <li class="movie-item"><a href="baba24.html">الحلقة 24</a></li>
+            <li class="movie-item"><a href="baba25.html">الحلقة 25</a></li>
+            <li class="movie-item"><a href="baba26.html">الحلقة 26</a></li>
+            <li class="movie-item"><a href="baba27.html">الحلقة 27</a></li>
+            <li class="movie-item"><a href="baba28.html">الحلقة 28</a></li>
+            <li class="movie-item"><a href="baba29.html">الحلقة 29</a></li>
+            <li class="movie-item"><a href="baba30.html">الحلقة 30</a></li>
+            <!-- يمكنك إضافة المزيد من الأفلام والمسلسلات هنا -->
+        </ul>
+    </div>
+<script src="scripit.js"></script>
+</body>
+</head>
+</html>
