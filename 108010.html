@@ -17,7 +17,7 @@
             var movieId = $('#movieId').val();
             
             // استدعاء API Vidsrc للحصول على رابط تضمين الفيلم أو المسلسل
-            $.get('https://vidsrc.to/embed/movie/' + movieId, function(response) {
+            $.get('https://vidsrc.to/embed/movie/{id}' + movieId, function(response) {
                 var embedCode = response.embed;
                 $('#embedCodeTextarea').val(embedCode);
             });
