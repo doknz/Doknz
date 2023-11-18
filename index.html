@@ -1,138 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>دوكن</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="موقع دوكن لأحدث الأفلام والمسلسلات والانمي">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="scripit.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieLoz.com</title>
     <style>
-        /* الأسلوب العام للصفحة */
-        body {
-            font-family: 'Tajawal', Arial, sans-serif;
-            background-image: url('background.jpg'); /* رابط الصورة الخلفية */
-            background-size: cover; /* لتغطية الشاشة بالكامل */
-            background-repeat: no-repeat; /* لعدم تكرار الصورة */
-            background-attachment: fixed; /* تجعل الصورة ثابتة عند التمرير */
-            margin: 0;
-            padding: 0;
-        }
-
-        /* ترويسة الموقع */
-        header {
-            background-color: #333;
-            color: hsl(0, 94%, 46%);
-            text-align: center;
-            padding: 10px;
-        }
-
-        /* عنوان الصفحة */
-        h1 {
-            margin: 0;
-        }
-
-        /* منطقة العرض للأفلام والمسلسلات */
-        .content {
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center; /* توسيط المحتوى */
-        }
-
-        /* قائمة لعرض الأفلام والمسلسلات */
-        .movie-list {
-            list-style-type: none;
-            padding: 0;
-            text-align: center; /* توسيط العناصر */
-        }
-
-        .movie-item {
-            margin: 10px;
-        }
-
-        /* المربعات الحمراء */
-        a {
-            text-decoration: none;
-            color: #333;
-            display: block;
-            padding: 20px;
-            border-radius: 5px;
-            background-color: red;
-            transition: background-color 0.3s;
-            font-size: 25px; /* تكبير حجم الخط داخل المربعات الحمراء */
-        }
-
-        a:hover {
-            background-color: gold;
-        }
-
-        /* توسيط عنوان الأفلام والمسلسلات والالانمي */
-        h2 {
-            text-align: center;
-        }
-
-        /* مربع البحث */
-        .search-box {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        input[type="text"] {
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            width: 100%; /* يمتلئ عرض الشاشة بالكامل */
-            max-width: 300px; /* حد أقصى لعرض المربع */
-        }
-
-        input[type="submit"] {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        /* تعديل للشاشات الصغيرة (تقنية التجاوب) */
-        @media (max-width: 600px) {
-            h2 {
-                font-size: 24px; /* تصغير حجم العنوان للهواتف الصغيرة */
-            }
-            .search-box {
-                margin-top: 10px;
-            }
-        }
+        /* أضف أي أنماط CSS لتحسين ظهور الموقع */
     </style>
-    <!-- تضمين الخط العربي Tajawal -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400&display=swap">
 </head>
 <body>
     <header>
-        <h1>دوكن</h1>
+        <h1>MovieLoz.com</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#serials">Serials</a></li>
+                <li><a href="#movies">Movies</a></li>
+                <li><a href="#cartoons">Cartoons</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
-    <div class="content">
-        <h2>اكبر موقع فهرسه بالوطن العربي</h2>
-<h3>جميع ما يعرض هنا تم رفعه من قبل اشخاص اخرين ( طرف ثالث ) <br>نحن لا نخزن و لا نرفع و لا ننشر <br>فقط نعرض اسهل طريقة للمشاهدة </h3>
-        <h3></h3>
-        <h3></h3>
-        <!-- نتائج البحث -->
-        <div class="search-results" id="searchResults">
-            <!-- هنا سيتم عرض نتائج البحث -->
-        </div>
-        <!-- قائمة الأفلام والمسلسلات الأخرى -->
-        <ul class="movie-list">
-            <!-- إضافة العناصر هنا -->
-            <li class="movie-item"><a href="movie1.html.html">الافلام</a></li>
-           <!-- <li class="movie-item"><a href="arabicmovie.html">الافلام العربية</a></li>-->
-            <!--<li class="movie-item"><a href="animemovies.html">الافلام الانمي</a></li>-->
-            <li class="movie-item"><a href="series1.html">المسلسلات</a></li>
-           <!-- <li class="movie-item"><a href="arabicseries.html">مسلسلات العربية</a></li>-->
-            <!--<li class="movie-item"><a href="animeseries.html">مسلسلات الانمي</a></li>-->
-            <li class="movie-item"><a href="https://vidsrc.to/vapi/movie/new">TeleBox</a></li>
-            <li class="movie-item"><a href="callus.html">اتصل بنا</a></li>
-            <!-- يمكنك إضافة المزيد من الأفلام والمسلسلات هنا -->
-        </ul>
-    </div>
-<script src="scripit.js"></script>
+    <main>
+        <section id="home">
+            <h2>Welcome to MovieLoz.com</h2>
+            <p>Watch movies, serials, and cartoons for free. Visit our website for more details.</p>
+        </section>
+        <section id="serials">
+            <h2>Serials</h2>
+            <p>You can only watch serials on our website.</p>
+        </section>
+        <section id="movies">
+            <h2>Movies</h2>
+            <p>Browse movies and find your favorite films. All movies are in high-quality format.</p>
+        </section>
+        <section id="cartoons">
+            <h2>Cartoons</h2>
+            <p>Enjoy watching cartoons and animations inside our app.</p>
+        </section>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Need to contact us or report a problem? You can reach us at: contact@movieloz.com</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2021 MovieLoz.com. All rights reserved.</p>
+    </footer>
 </body>
 </html>
