@@ -1,5 +1,5 @@
 // تعيين النهاية (endpoint) للـ API
-const endpoint = 'https://vidsrc.to/vapi/movie/';
+const endpoint = 'https://vidsrc.to/vapi/movie/{type}/{page}';
 
 // دالة لجلب البيانات من الـ API
 async function fetchMovies(type, page) {
