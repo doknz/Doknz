@@ -33,6 +33,11 @@
         .copy-button:hover {
             background-color: #005f75;
         }
+        .copy-message {
+            display: none;
+            color: green;
+            margin-top: 5px;
+        }
     </style>
 </head>
 <body>
@@ -43,6 +48,7 @@
         <div class="wallet-box">
             <p id="walletAddress">0x6d91b8bbbff0989b8c764198a10a32bf3a3e89ff</p>
             <button class="copy-button" onclick="copyToClipboard()">نسخ</button>
+            <p class="copy-message" id="copyMessage">تم النسخ إلى الحافظة</p>
         </div>
         <h2>Creed 3 (2023) - 1080p</h2>
         <h3>لو السيرفر مو شغال يا ليت ترسل لنا على حساباتنا عشان نحدثه على طول<br><span>و خليك متابع معنا على حساباتنا عشان لو قفل الموقع نعطيك رابط موقعنا الجديد </span></h3>
@@ -58,7 +64,12 @@
             textArea.select();
             document.execCommand("copy");
             document.body.removeChild(textArea);
-            alert("تم نسخ العنوان إلى الحافظة");
+            
+            const copyMessage = document.getElementById("copyMessage");
+            copyMessage.style.display = "block";
+            setTimeout(function() {
+                copyMessage.style.display = "none";
+            }, 2000); // يختفي الرسالة بعد 2 ثانية
         }
     </script>
 </body>
