@@ -95,11 +95,11 @@
 </div>
 
 <div class="container">
-  <div class="return-box" onclick="goHome()">
+  <div class="return-box" onmouseenter="changeColor(this)" onmouseleave="revertColor(this)" onclick="goHome()">
     <h3>رجوع للصفحة الرئيسية</h3>
   </div>
 
-  <div class="box" onclick="showInfo(this)">
+  <div class="box" onmouseenter="changeColor(this)" onmouseleave="revertColor(this)" onclick="showInfo(this)">
     <h3>عنوان المعلومات الأولى</h3>
   </div>
 
@@ -107,7 +107,7 @@
     <h3>المعلومات الأولى عن طريقة المشاهدة</h3>
   </div>
 
-  <div class="box" onclick="showInfo(this)" style="margin-top: 40px; display: flex; justify-content: center;">
+  <div class="box" onmouseenter="changeColor(this)" onmouseleave="revertColor(this)" style="margin-top: 40px; display: flex; justify-content: center;" onclick="showInfo(this)">
     <h3>عنوان المعلومات الثانية</h3>
   </div>
 
@@ -120,14 +120,13 @@
 </div>
 
 <script>
-  document.addEventListener('mousedown', function(event) {
-    const boxes = document.querySelectorAll('.box');
-    boxes.forEach(box => {
-      if (!box.contains(event.target)) {
-        box.classList.remove('active');
-      }
-    });
-  });
+  function changeColor(element) {
+    element.style.backgroundColor = "#FFD700";
+  }
+
+  function revertColor(element) {
+    element.style.backgroundColor = "#FE0000";
+  }
 
   function showInfo(element) {
     const hiddenInfo = element.nextElementSibling;
