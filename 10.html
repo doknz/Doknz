@@ -4,51 +4,75 @@
   <meta charset="UTF-8">
   <title>معلومات المشاهدة</title>
   <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
     .box {
-      width: 200px;
+      width: 300px;
       height: 50px;
       background-color: #f0f0f0;
       margin-bottom: 10px;
       cursor: pointer;
       transition: height 0.3s ease;
       overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     .box:hover {
-      height: 150px; /* ارتفاع المربع الذي سيظهر عند النقر */
+      height: 150px;
     }
     .hidden-info {
       display: none;
       padding: 10px;
       background-color: #e0e0e0;
+      width: 250px;
+      text-align: center;
     }
     .box:hover .hidden-info {
-      display: block; /* عرض المعلومات عند النقر */
+      display: block;
     }
   </style>
 </head>
 <body>
 
-<div class="box">
-  <div class="hidden-info">
-    المعلومات الأولى عن طريقة المشاهدة.
+<div class="container">
+  <div class="box">
+    <h3>عنوان المعلومات الأولى</h3>
+    <div class="hidden-info">
+      المعلومات الأولى عن طريقة المشاهدة.
+    </div>
   </div>
-</div>
 
-<div class="box">
-  <div class="hidden-info">
-    المعلومات الثانية عن طريقة المشاهدة.
+  <div class="box">
+    <h3>عنوان المعلومات الثانية</h3>
+    <div class="hidden-info">
+      المعلومات الثانية عن طريقة المشاهدة.
+    </div>
   </div>
-</div>
 
-<div class="box">
-  <div class="hidden-info">
-    المعلومات الثالثة عن طريقة المشاهدة.
+  <div class="box">
+    <h3>عنوان المعلومات الثالثة</h3>
+    <div class="hidden-info">
+      المعلومات الثالثة عن طريقة المشاهدة.
+    </div>
   </div>
-</div>
 
-<div class="box">
-  <div class="hidden-info">
-    المعلومات الرابعة عن طريقة المشاهدة.
+  <div class="box">
+    <h3>عنوان المعلومات الرابعة</h3>
+    <div class="hidden-info">
+      المعلومات الرابعة عن طريقة المشاهدة.
+    </div>
   </div>
 </div>
 
