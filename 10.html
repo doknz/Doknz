@@ -78,7 +78,7 @@
       text-align: center;
       border-radius: 12px;
       box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
-      margin-top: -15px; /* الارتفاع أعلى المربع السابق */
+      margin-top: -20px; /* الارتفاع أعلى المربع السابق */
     }
     .box.clicked + .hidden-info {
       display: none;
@@ -104,22 +104,18 @@
   </div>
 
   <div class="hidden-info">
-    <h3>تستطيع مشاهدة الانمي داخل التطبيق او على متصفحك
-
-للمشاهدة على متصفحك 
-كل ما عليك فعله هو تحويل متصفح هاتفك الى متصفح الكمبيوتر
-الضغط على الاصدار الموقع الإلكتروني</h3>
+    <h3>المعلومات الأولى عن طريقة المشاهدة</h3>
   </div>
 
-<div class="box" onclick="showInfo(this)">
-    <h3>عنوان المعلومات الثانية</h3>
-</div>
+  <div style="margin-top: 40px;"> <!-- تعديل المسافة بين المربعات -->
+    <div class="box" onclick="showInfo(this)">
+      <h3>عنوان المعلومات الثانية</h3>
+    </div>
 
-<div class="hidden-info">
-    <h3>المعلومات الثانية عن طريقة المشاهدة</h3>
-</div>
-
-
+    <div class="hidden-info">
+      <h3>المعلومات الثانية عن طريقة المشاهدة</h3>
+    </div>
+  </div>
 
   <!-- هنا يمكنك إضافة المزيد من المربعات -->
 
