@@ -9,7 +9,6 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
       margin: 0;
       font-family: Arial, sans-serif;
       background-color: #f8f8f8;
@@ -36,43 +35,38 @@
       padding-top: 20px;
     }
     .box {
+      position: relative;
       width: 300px;
+      margin-bottom: 10px;
+    }
+    .box h3 {
+      width: 100%;
       height: 50px;
       background-color: #FF6347; /* لون أحمر للمربع */
-      margin-bottom: 10px;
       cursor: pointer;
-      transition: all 0.3s ease; /* تغيير اللون بانتقال سلس */
-      overflow: hidden;
       display: flex;
       justify-content: center;
       align-items: center;
       border-radius: 8px;
       box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
       color: #fff;
-      position: relative;
+      margin: 0;
+      transition: background-color 0.3s ease;
     }
-    .box.clicked {
-      background-color: #FFD700; /* لون ذهبي عند التحويل */
-      color: #000; /* لون النص يتغير عندما يصبح الخلفية ذهبية */
-    }
-    .hidden-info {
-      display: none;
-      padding: 10px;
-      background-color: #f0f0f0;
-      width: 250px;
-      text-align: center;
-      border-radius: 12px;
-      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    .box .hidden-info {
       position: absolute;
       top: 50px; /* بداية المربع الخفي من نقطة البداية للعنوان */
       left: 0;
-      z-index: 1;
+      width: 300px;
+      padding: 10px;
+      background-color: #f0f0f0;
+      text-align: center;
+      border-radius: 12px;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+      display: none;
     }
-    .box.clicked + .hidden-info {
+    .box.clicked .hidden-info {
       display: block;
-    }
-    h3 {
-      margin: 0;
     }
   </style>
 </head>
@@ -113,15 +107,6 @@
 </div>
 
 <script>
-  document.addEventListener('click', function(event) {
-    const boxes = document.querySelectorAll('.box');
-    boxes.forEach(box => {
-      if (!box.contains(event.target)) {
-        box.classList.remove('clicked');
-      }
-    });
-  });
-
   function showInfo(element) {
     const hiddenInfo = element.querySelector('.hidden-info');
     const boxes = document.querySelectorAll('.hidden-info');
