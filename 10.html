@@ -91,6 +91,15 @@
 </div>
 
 <script>
+  document.addEventListener('click', function(event) {
+    const boxes = document.querySelectorAll('.box');
+    boxes.forEach(box => {
+      if (!box.contains(event.target)) {
+        box.classList.remove('clicked');
+      }
+    });
+  });
+
   function showInfo(element) {
     const hiddenInfo = element.nextElementSibling;
     const boxes = document.querySelectorAll('.hidden-info');
