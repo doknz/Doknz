@@ -135,4 +135,16 @@
     boxes.forEach(box => {
       if (box !== hiddenInfo) {
         box.style.display = 'none';
-     
+      }
+    });
+    hiddenInfo.style.display = hiddenInfo.style.display === 'block' ? 'none' : 'block';
+    element.classList.toggle('clicked');
+  }
+
+  function goHome() {
+    window.location.href = "https://www.example.com"; // تغيير الرابط إلى الرابط الخاص بك
+  }
+</script>
+
+</body>
+</html>
