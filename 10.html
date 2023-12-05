@@ -107,14 +107,12 @@
     <h3>المعلومات الأولى عن طريقة المشاهدة</h3>
   </div>
 
-  <div style="margin-top: 40px;"> <!-- تعديل المسافة بين المربعات -->
-    <div class="box" onclick="showInfo(this)">
-      <h3>عنوان المعلومات الثانية</h3>
-    </div>
+  <div class="box" onclick="showInfo(this)" style="margin-top: 40px; display: flex; justify-content: center;">
+    <h3>عنوان المعلومات الثانية</h3>
+  </div>
 
-    <div class="hidden-info">
-      <h3>المعلومات الثانية عن طريقة المشاهدة</h3>
-    </div>
+  <div class="hidden-info">
+    <h3>المعلومات الثانية عن طريقة المشاهدة</h3>
   </div>
 
   <!-- هنا يمكنك إضافة المزيد من المربعات -->
@@ -137,16 +135,4 @@
     boxes.forEach(box => {
       if (box !== hiddenInfo) {
         box.style.display = 'none';
-      }
-    });
-    hiddenInfo.style.display = hiddenInfo.style.display === 'block' ? 'none' : 'block';
-    element.classList.toggle('clicked');
-  }
-
-  function goHome() {
-    window.location.href = "https://www.example.com"; // تغيير الرابط إلى الرابط الخاص بك
-  }
-</script>
-
-</body>
-</html>
+     
