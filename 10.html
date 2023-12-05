@@ -50,6 +50,14 @@
     .return-box:hover {
       background-color: #0099FF; /* تغيير لون الزر عند التحويل */
     }
+    .box-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding-top: 20px;
+    }
     .box {
       width: 300px;
       height: 50px;
@@ -78,9 +86,11 @@
       text-align: center;
       border-radius: 12px;
       box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+      position: absolute;
+      z-index: 1;
     }
     .box.clicked + .hidden-info {
-      display: none;
+      display: block;
     }
     h3 {
       margin: 0;
@@ -98,23 +108,20 @@
     <h3>رجوع للصفحة الرئيسية</h3>
   </div>
 
-  <div class="box" onclick="showInfo(this)">
-    <h3>عنوان المعلومات الأولى</h3>
+  <div class="box-container">
+    <div class="box" onclick="showInfo(this)">
+      <h3>عنوان المعلومات الأولى</h3>
+    </div>
+    <div class="hidden-info">
+      <h3>المعلومات الأولى عن طريقة المشاهدة</h3>
+    </div>
+    <div class="box" onclick="showInfo(this)">
+      <h3>عنوان المعلومات الثانية</h3>
+    </div>
+    <div class="hidden-info">
+      <h3>المعلومات الثانية عن طريقة المشاهدة</h3>
+    </div>
   </div>
-
-  <div class="hidden-info">
-    <h3>المعلومات الأولى عن طريقة المشاهدة</h3>
-  </div>
-
-<div class="box" onclick="showInfo(this)">
-    <h3>عنوان المعلومات الثانية</h3>
-</div>
-
-<div class="hidden-info">
-    <h3>المعلومات الثانية عن طريقة المشاهدة</h3>
-</div>
-
-
 
   <!-- هنا يمكنك إضافة المزيد من المربعات -->
 
