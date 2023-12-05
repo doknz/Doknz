@@ -66,6 +66,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      position: relative;
     }
     .box.clicked {
       background-color: #FFD700;
@@ -106,18 +107,16 @@
 
   <div class="box" onclick="showInfo(this)">
     <h3>عنوان المعلومات الأولى</h3>
-  </div>
-
-  <div class="hidden-info">
-    <h3>المعلومات الأولى عن طريقة المشاهدة</h3>
+    <div class="hidden-info">
+      <h3>المعلومات الأولى عن طريقة المشاهدة</h3>
+    </div>
   </div>
 
   <div class="box" onclick="showInfo(this)">
     <h3>عنوان المعلومات الثانية</h3>
-  </div>
-
-  <div class="hidden-info" style="top: 150%;">
-    <h3>المعلومات الثانية عن طريقة المشاهدة</h3>
+    <div class="hidden-info">
+      <h3>المعلومات الثانية عن طريقة المشاهدة</h3>
+    </div>
   </div>
 
   <!-- هنا يمكنك إضافة المزيد من المربعات -->
@@ -135,7 +134,7 @@
   });
 
   function showInfo(element) {
-    const hiddenInfo = element.nextElementSibling;
+    const hiddenInfo = element.querySelector('.hidden-info');
     const boxes = document.querySelectorAll('.hidden-info');
     boxes.forEach(box => {
       if (box !== hiddenInfo) {
