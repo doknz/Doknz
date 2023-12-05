@@ -34,7 +34,7 @@
     .return-box {
       width: 300px;
       height: 50px;
-      background-color: #FE0000;
+      background-color: #FE0000; /* لون الزر للرجوع */
       margin-bottom: 20px;
       cursor: pointer;
       transition: all 0.3s ease;
@@ -48,12 +48,12 @@
       align-items: center;
     }
     .return-box:hover {
-      background-color: #0099FF;
+      background-color: #0099FF; /* تغيير لون الزر عند التحويل */
     }
     .box {
       width: 300px;
       height: 50px;
-      background-color: #FE0000;
+      background-color: #FE0000; /* لون أحمر للمربع */
       margin-bottom: 20px;
       cursor: pointer;
       transition: all 0.3s ease;
@@ -65,7 +65,6 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      position: relative;
     }
     .box.clicked {
       background-color: #FFD700;
@@ -79,15 +78,10 @@
       text-align: center;
       border-radius: 12px;
       box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
-      position: absolute;
-      top: 100%;
-      left: 50%;
-      transform: translateX(-50%);
-      margin-top: 10px;
-      z-index: 1;
+      margin-top: -20px; /* الارتفاع أعلى المربع السابق */
     }
-    .box.clicked .hidden-info {
-      display: block;
+    .box.clicked + .hidden-info {
+      display: none;
     }
     h3 {
       margin: 0;
@@ -106,13 +100,24 @@
   </div>
 
   <div class="box" onclick="showInfo(this)">
-    <h3>عنوان المعلومات</h3>
-    <div class="hidden-info">
-      <h3>المعلومات عن طريق المشاهدة</h3>
-    </div>
+    <h3>عنوان المعلومات الأولى</h3>
   </div>
 
-  <!-- يمكنك إضافة المزيد من المربعات هنا -->
+  <div class="hidden-info">
+    <h3>المعلومات الأولى عن طريقة المشاهدة</h3>
+  </div>
+
+<div class="box" onclick="showInfo(this)">
+    <h3>عنوان المعلومات الثانية</h3>
+</div>
+
+<div class="hidden-info">
+    <h3>المعلومات الثانية عن طريقة المشاهدة</h3>
+</div>
+
+
+
+  <!-- هنا يمكنك إضافة المزيد من المربعات -->
 
 </div>
 
@@ -127,7 +132,7 @@
   });
 
   function showInfo(element) {
-    const hiddenInfo = element.querySelector('.hidden-info');
+    const hiddenInfo = element.nextElementSibling;
     const boxes = document.querySelectorAll('.hidden-info');
     boxes.forEach(box => {
       if (box !== hiddenInfo) {
@@ -139,7 +144,7 @@
   }
 
   function goHome() {
-    window.location.href = "https://www.example.com"; // يمكنك تغيير الرابط إلى الرابط الخاص بك
+    window.location.href = "https://www.example.com"; // تغيير الرابط إلى الرابط الخاص بك
   }
 </script>
 
