@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>معلومات المشاهدة</title>
   <style>
     body {
@@ -28,6 +27,7 @@
       padding-top: 20px;
     }
     .box {
+      position: relative; /* لتمكين العناصر المتصلة */
       width: 300px;
       height: 50px;
       background-color: #FF6347; /* لون أحمر للمربع */
@@ -41,7 +41,6 @@
       border-radius: 8px;
       box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
       color: #fff;
-      position: relative; /* إضافة العنصر إلى الوضع النسبي */
     }
     .box.clicked {
       background-color: #FFD700; /* لون ذهبي عند التحويل */
@@ -56,9 +55,9 @@
       border-radius: 12px;
       box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
       position: absolute; /* ضبط مكان المربع */
-      top: 70px; /* المسافة من الأعلى */
-      left: 50%; /* مركز المربع */
-      transform: translateX(-50%); /* لتوسيط المربع بشكل أفضل */
+      top: 50px; /* المسافة من الأعلى */
+      left: calc(100% + 20px); /* تحديد الموضع على الجانب الأيمن من المربع */
+      transform: translateX(-100%); /* لتوسيط المربع بشكل أفضل */
     }
     .box.clicked + .hidden-info {
       display: block;
