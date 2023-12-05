@@ -23,6 +23,10 @@
       box-sizing: border-box;
       font-size: 18px; /* حجم النص */
     }
+    .header h1 {
+      font-size: 24px;
+      margin: 0;
+    }
     .container {
       display: flex;
       flex-direction: column;
@@ -45,6 +49,7 @@
       border-radius: 8px;
       box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
       color: #fff;
+      position: relative;
     }
     .box.clicked {
       background-color: #FFD700; /* لون ذهبي عند التحويل */
@@ -58,9 +63,13 @@
       text-align: center;
       border-radius: 12px;
       box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+      position: absolute;
+      top: 50px; /* بداية المربع الخفي من نقطة البداية للعنوان */
+      left: 0;
+      z-index: 1;
     }
     .box.clicked + .hidden-info {
-      display: none;
+      display: block;
     }
     h3 {
       margin: 0;
@@ -76,34 +85,30 @@
 <div class="container">
   <div class="box" onclick="showInfo(this)">
     <h3>عنوان المعلومات الأولى</h3>
-  </div>
-
-  <div class="hidden-info">
-    <h3>المعلومات الأولى عن طريقة المشاهدة</h3>
+    <div class="hidden-info">
+      <h3>المعلومات الأولى عن طريقة المشاهدة</h3>
+    </div>
   </div>
 
   <div class="box" onclick="showInfo(this)">
     <h3>عنوان المعلومات الثانية</h3>
-  </div>
-
-  <div class="hidden-info">
-    <h3>المعلومات الثانية عن طريقة المشاهدة</h3>
+    <div class="hidden-info">
+      <h3>المعلومات الثانية عن طريقة المشاهدة</h3>
+    </div>
   </div>
 
   <div class="box" onclick="showInfo(this)">
     <h3>عنوان المعلومات الثالثة</h3>
-  </div>
-
-  <div class="hidden-info">
-    <h3>المعلومات الثالثة عن طريقة المشاهدة</h3>
+    <div class="hidden-info">
+      <h3>المعلومات الثالثة عن طريقة المشاهدة</h3>
+    </div>
   </div>
 
   <div class="box" onclick="showInfo(this)">
     <h3>عنوان المعلومات الرابعة</h3>
-  </div>
-
-  <div class="hidden-info">
-    <h3>المعلومات الرابعة عن طريقة المشاهدة</h3>
+    <div class="hidden-info">
+      <h3>المعلومات الرابعة عن طريقة المشاهدة</h3>
+    </div>
   </div>
 </div>
 
@@ -118,7 +123,7 @@
   });
 
   function showInfo(element) {
-    const hiddenInfo = element.nextElementSibling;
+    const hiddenInfo = element.querySelector('.hidden-info');
     const boxes = document.querySelectorAll('.hidden-info');
     boxes.forEach(box => {
       if (box !== hiddenInfo) {
