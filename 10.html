@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>معلومات المشاهدة</title>
   <style>
     body {
@@ -41,6 +40,7 @@
       border-radius: 8px;
       box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
       color: #fff;
+      position: relative; /* إضافة العنصر إلى الوضع النسبي */
     }
     .box.clicked {
       background-color: #FFD700; /* لون ذهبي عند التحويل */
@@ -54,9 +54,13 @@
       text-align: center;
       border-radius: 12px;
       box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+      position: absolute; /* ضبط مكان المربع */
+      top: 70px; /* المسافة من الأعلى */
+      left: 50%; /* مركز المربع */
+      transform: translateX(-50%); /* لتوسيط المربع بشكل أفضل */
     }
     .box.clicked + .hidden-info {
-      display: none;
+      display: block;
     }
     h3 {
       margin: 0;
@@ -72,34 +76,30 @@
 <div class="container">
   <div class="box" onclick="showInfo(this)">
     <h3>عنوان المعلومات الأولى</h3>
-  </div>
-
-  <div class="hidden-info">
-    <h3>المعلومات الأولى عن طريقة المشاهدة</h3>
+    <div class="hidden-info">
+      <h3>المعلومات الأولى عن طريقة المشاهدة</h3>
+    </div>
   </div>
 
   <div class="box" onclick="showInfo(this)">
     <h3>عنوان المعلومات الثانية</h3>
-  </div>
-
-  <div class="hidden-info">
-    <h3>المعلومات الثانية عن طريقة المشاهدة</h3>
+    <div class="hidden-info">
+      <h3>المعلومات الثانية عن طريقة المشاهدة</h3>
+    </div>
   </div>
 
   <div class="box" onclick="showInfo(this)">
     <h3>عنوان المعلومات الثالثة</h3>
-  </div>
-
-  <div class="hidden-info">
-    <h3>المعلومات الثالثة عن طريقة المشاهدة</h3>
+    <div class="hidden-info">
+      <h3>المعلومات الثالثة عن طريقة المشاهدة</h3>
+    </div>
   </div>
 
   <div class="box" onclick="showInfo(this)">
     <h3>عنوان المعلومات الرابعة</h3>
-  </div>
-
-  <div class="hidden-info">
-    <h3>المعلومات الرابعة عن طريقة المشاهدة</h3>
+    <div class="hidden-info">
+      <h3>المعلومات الرابعة عن طريقة المشاهدة</h3>
+    </div>
   </div>
 </div>
 
@@ -114,7 +114,7 @@
   });
 
   function showInfo(element) {
-    const hiddenInfo = element.nextElementSibling;
+    const hiddenInfo = element.querySelector('.hidden-info');
     const boxes = document.querySelectorAll('.hidden-info');
     boxes.forEach(box => {
       if (box !== hiddenInfo) {
