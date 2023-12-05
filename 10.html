@@ -27,7 +27,6 @@
       padding-top: 20px;
     }
     .box {
-      position: relative; /* لتمكين العناصر المتصلة */
       width: 300px;
       height: 50px;
       background-color: #FF6347; /* لون أحمر للمربع */
@@ -54,13 +53,9 @@
       text-align: center;
       border-radius: 12px;
       box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
-      position: absolute; /* ضبط مكان المربع */
-      top: 50px; /* المسافة من الأعلى */
-      left: calc(100% + 20px); /* تحديد الموضع على الجانب الأيمن من المربع */
-      transform: translateX(-100%); /* لتوسيط المربع بشكل أفضل */
     }
     .box.clicked + .hidden-info {
-      display: block;
+      display: none;
     }
     h3 {
       margin: 0;
@@ -76,30 +71,34 @@
 <div class="container">
   <div class="box" onclick="showInfo(this)">
     <h3>عنوان المعلومات الأولى</h3>
-    <div class="hidden-info">
-      <h3>المعلومات الأولى عن طريقة المشاهدة</h3>
-    </div>
+  </div>
+
+  <div class="hidden-info">
+    <h3>المعلومات الأولى عن طريقة المشاهدة</h3>
   </div>
 
   <div class="box" onclick="showInfo(this)">
     <h3>عنوان المعلومات الثانية</h3>
-    <div class="hidden-info">
-      <h3>المعلومات الثانية عن طريقة المشاهدة</h3>
-    </div>
+  </div>
+
+  <div class="hidden-info">
+    <h3>المعلومات الثانية عن طريقة المشاهدة</h3>
   </div>
 
   <div class="box" onclick="showInfo(this)">
     <h3>عنوان المعلومات الثالثة</h3>
-    <div class="hidden-info">
-      <h3>المعلومات الثالثة عن طريقة المشاهدة</h3>
-    </div>
+  </div>
+
+  <div class="hidden-info">
+    <h3>المعلومات الثالثة عن طريقة المشاهدة</h3>
   </div>
 
   <div class="box" onclick="showInfo(this)">
     <h3>عنوان المعلومات الرابعة</h3>
-    <div class="hidden-info">
-      <h3>المعلومات الرابعة عن طريقة المشاهدة</h3>
-    </div>
+  </div>
+
+  <div class="hidden-info">
+    <h3>المعلومات الرابعة عن طريقة المشاهدة</h3>
   </div>
 </div>
 
@@ -114,7 +113,7 @@
   });
 
   function showInfo(element) {
-    const hiddenInfo = element.querySelector('.hidden-info');
+    const hiddenInfo = element.nextElementSibling;
     const boxes = document.querySelectorAll('.hidden-info');
     boxes.forEach(box => {
       if (box !== hiddenInfo) {
