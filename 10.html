@@ -30,12 +30,12 @@
       justify-content: center;
       width: 100%;
       padding-top: 20px;
-      position: relative; /* تحديد الموقع النسبي */
+      position: relative;
     }
     .return-box {
       width: 300px;
       height: 50px;
-      background-color: #FE0000; /* لون الزر للرجوع */
+      background-color: #FE0000;
       margin-bottom: 20px;
       cursor: pointer;
       transition: all 0.3s ease;
@@ -49,12 +49,12 @@
       align-items: center;
     }
     .return-box:hover {
-      background-color: #0099FF; /* تغيير لون الزر عند التحويل */
+      background-color: #0099FF;
     }
     .box {
       width: 300px;
       height: 50px;
-      background-color: #FE0000; /* لون أحمر للمربع */
+      background-color: #FE0000;
       margin-bottom: 20px;
       cursor: pointer;
       transition: all 0.3s ease;
@@ -79,14 +79,14 @@
       text-align: center;
       border-radius: 12px;
       box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
-      position: absolute; /* تحديد الموقع المطلق */
-      top: 100%; /* تحديد الموقع بالنسبة للعنصر الأب */
-      left: 50%; /* المحاذاة الأفقية */
-      transform: translateX(-50%); /* التعديل ليكون بالوسط */
-      margin-top: 10px; /* المسافة بين المربعين */
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-top: 10px;
     }
     .box.clicked + .hidden-info {
-      display: block; /* عرض المخفي عند الضغط */
+      display: block;
     }
     h3 {
       margin: 0;
@@ -116,7 +116,7 @@
     <h3>عنوان المعلومات الثانية</h3>
   </div>
 
-  <div class="hidden-info">
+  <div class="hidden-info" style="top: 150%;">
     <h3>المعلومات الثانية عن طريقة المشاهدة</h3>
   </div>
 
