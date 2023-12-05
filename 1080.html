@@ -5,6 +5,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .box {
+      width: 300px;
+      height: 50px;
+      background-color: #FF6347; /* لون أحمر للمربع */
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease; /* تغيير اللون بانتقال سلس */
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 8px;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+      color: #fff;
+    }
+    .box.clicked {
+      background-color: #FFD700; /* لون ذهبي عند التحويل */
+      color: #000; /* لون النص يتغير عندما يصبح الخلفية ذهبية */
+    }
+
+    .hidden-info {
+      display: none;
+      padding: 10px;
+      background-color: #f0f0f0;
+      width: 250px;
+      text-align: center;
+      border-radius: 12px;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    }
+    .box.clicked + .hidden-info {
+      display: none;
+    }
+    h3 {
+      margin: 0;
+    }
+
+
+
+
         body {
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
@@ -70,12 +124,32 @@
 <body>
     <header>
         <h1>دوكن</h1>
-    </header>
-    <div class="container">
-        <iframe src="https://embedwish.com/e/72e0is8efyzx" frameborder="0" allowfullscreen></iframe>
-        <h2>OldBoy (2003) - 1080p</h2>
-        <h3>لو السيرفر مو شغال يا ليت ترسل لنا على حساباتنا عشان نحدثه على طول<br><span>و خليك متابع معنا على حساباتنا عشان لو قفل الموقع نعطيك رابط موقعنا الجديد </span></h3>
+    </header>
     <a href="quality.html">رجوع</a>
 </div>
+  <div class="box" onclick="showInfo(this)">
+    <h3>عنوان المعلومات الأولى</h3>
+  </div>
+<script>
+  document.addEventListener('click', function(event) {
+    const boxes = document.querySelectorAll('.box');
+    boxes.forEach(box => {
+      if (!box.contains(event.target)) {
+        box.classList.remove('clicked');
+      }
+    });
+  });
+
+  function showInfo(element) {
+    const hiddenInfo = element.nextElementSibling;
+    const boxes = document.querySelectorAll('.hidden-info');
+    boxes.forEach(box => {
+      if (box !== hiddenInfo) {
+        box.style.display = 'none';
+      }
+    });
+    hiddenInfo.style.display = hiddenInfo.style.display === 'block' ? 'none' : 'block';
+    element.classList.toggle('clicked');
+  }
 </body>
 </html>
