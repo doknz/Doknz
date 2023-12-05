@@ -30,6 +30,7 @@
       justify-content: center;
       width: 100%;
       padding-top: 20px;
+      position: relative; /* تحديد الموقع النسبي */
     }
     .return-box {
       width: 300px;
@@ -78,10 +79,14 @@
       text-align: center;
       border-radius: 12px;
       box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
-      margin-top: -20px; /* الارتفاع أعلى المربع السابق */
+      position: absolute; /* تحديد الموقع المطلق */
+      top: 100%; /* تحديد الموقع بالنسبة للعنصر الأب */
+      left: 50%; /* المحاذاة الأفقية */
+      transform: translateX(-50%); /* التعديل ليكون بالوسط */
+      margin-top: 10px; /* المسافة بين المربعين */
     }
     .box.clicked + .hidden-info {
-      display: none;
+      display: block; /* عرض المخفي عند الضغط */
     }
     h3 {
       margin: 0;
@@ -107,14 +112,12 @@
     <h3>المعلومات الأولى عن طريقة المشاهدة</h3>
   </div>
 
-  <div style="margin-top: 40px;"> <!-- تعديل المسافة بين المربعات -->
-    <div class="box" onclick="showInfo(this)">
-      <h3>عنوان المعلومات الثانية</h3>
-    </div>
+  <div class="box" onclick="showInfo(this)">
+    <h3>عنوان المعلومات الثانية</h3>
+  </div>
 
-    <div class="hidden-info">
-      <h3>المعلومات الثانية عن طريقة المشاهدة</h3>
-    </div>
+  <div class="hidden-info">
+    <h3>المعلومات الثانية عن طريقة المشاهدة</h3>
   </div>
 
   <!-- هنا يمكنك إضافة المزيد من المربعات -->
