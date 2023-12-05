@@ -34,7 +34,7 @@
       color: #fff;
     }
     .box:hover {
-      background-color: #FFD700; /* لون ذهبي عند التحويل */
+      background-color: #FF6347; /* لون أحمر عند التحويل */
     }
     .hidden-info {
       display: none;
@@ -42,9 +42,10 @@
       background-color: #f0f0f0;
       width: 250px;
       text-align: center;
-      border-radius: 8px;
+      border-radius: 12px;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
     }
-    .box:hover .hidden-info {
+    .box.clicked + .hidden-info {
       display: block;
     }
     h3 {
@@ -55,34 +56,52 @@
 <body>
 
 <div class="container">
-  <div class="box">
+  <div class="box" onclick="showInfo(this)">
     <h3>عنوان المعلومات الأولى</h3>
-    <div class="hidden-info">
-      المعلومات الأولى عن طريقة المشاهدة.
-    </div>
   </div>
 
-  <div class="box">
+  <div class="hidden-info">
+    <h3>المعلومات الأولى عن طريقة المشاهدة</h3>
+  </div>
+
+  <div class="box" onclick="showInfo(this)">
     <h3>عنوان المعلومات الثانية</h3>
-    <div class="hidden-info">
-      المعلومات الثانية عن طريقة المشاهدة.
-    </div>
   </div>
 
-  <div class="box">
+  <div class="hidden-info">
+    <h3>المعلومات الثانية عن طريقة المشاهدة</h3>
+  </div>
+
+  <div class="box" onclick="showInfo(this)">
     <h3>عنوان المعلومات الثالثة</h3>
-    <div class="hidden-info">
-      المعلومات الثالثة عن طريقة المشاهدة.
-    </div>
   </div>
 
-  <div class="box">
+  <div class="hidden-info">
+    <h3>المعلومات الثالثة عن طريقة المشاهدة</h3>
+  </div>
+
+  <div class="box" onclick="showInfo(this)">
     <h3>عنوان المعلومات الرابعة</h3>
-    <div class="hidden-info">
-      المعلومات الرابعة عن طريقة المشاهدة.
-    </div>
+  </div>
+
+  <div class="hidden-info">
+    <h3>المعلومات الرابعة عن طريقة المشاهدة</h3>
   </div>
 </div>
+
+<script>
+  function showInfo(element) {
+    const hiddenInfo = element.nextElementSibling;
+    const boxes = document.querySelectorAll('.hidden-info');
+    boxes.forEach(box => {
+      if (box !== hiddenInfo) {
+        box.style.display = 'none';
+      }
+    });
+    hiddenInfo.style.display = hiddenInfo.style.display === 'block' ? 'none' : 'block';
+    element.classList.toggle('clicked');
+  }
+</script>
 
 </body>
 </html>
