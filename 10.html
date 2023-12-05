@@ -15,13 +15,13 @@
       background-color: #f8f8f8;
     }
     .header {
-      background-color: #333; /* Background لون رصاصي */
-      color: red; /* كلمة movieloz باللون الأحمر */
+      background-color: #333;
+      color: red;
       text-align: center;
       padding: 10px;
       width: 100%;
       box-sizing: border-box;
-      font-size: 18px; /* حجم النص */
+      font-size: 18px;
     }
     .container {
       display: flex;
@@ -30,7 +30,25 @@
       justify-content: center;
       width: 100%;
       padding-top: 20px;
-      margin-top: 200px; /* مسافة بين العنوان والمربعات */
+    }
+    .return-box {
+      width: 300px;
+      height: 50px;
+      background-color: #0066FF; /* لون الزر للرجوع */
+      margin-bottom: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      overflow: hidden;
+      text-align: center;
+      border-radius: 8px;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .return-box:hover {
+      background-color: #0099FF; /* تغيير لون الزر عند التحويل */
     }
     .box {
       width: 300px;
@@ -38,7 +56,7 @@
       background-color: #FE0000; /* لون أحمر للمربع */
       margin-bottom: 20px;
       cursor: pointer;
-      transition: all 0.3s ease; /* تغيير اللون بانتقال سلس */
+      transition: all 0.3s ease;
       overflow: hidden;
       text-align: center;
       border-radius: 8px;
@@ -49,8 +67,8 @@
       align-items: center;
     }
     .box.clicked {
-      background-color: #FFD700; /* لون ذهبي عند التحويل */
-      color: #000; /* لون النص يتغير عندما يصبح الخلفية ذهبية */
+      background-color: #FFD700;
+      color: #000;
     }
     .hidden-info {
       display: none;
@@ -76,6 +94,10 @@
 </div>
 
 <div class="container">
+  <div class="return-box" onclick="goHome()">
+    <h3>رجوع للصفحة الرئيسية</h3>
+  </div>
+
   <div class="box" onclick="showInfo(this)">
     <h3>عنوان المعلومات الأولى</h3>
   </div>
@@ -84,29 +106,8 @@
     <h3>المعلومات الأولى عن طريقة المشاهدة</h3>
   </div>
 
-  <div class="box" onclick="showInfo(this)">
-    <h3>عنوان المعلومات الثانية</h3>
-  </div>
+  <!-- هنا يمكنك إضافة المزيد من المربعات -->
 
-  <div class="hidden-info">
-    <h3>المعلومات الثانية عن طريقة المشاهدة</h3>
-  </div>
-
-  <div class="box" onclick="showInfo(this)">
-    <h3>عنوان المعلومات الثالثة</h3>
-  </div>
-
-  <div class="hidden-info">
-    <h3>المعلومات الثالثة عن طريقة المشاهدة</h3>
-  </div>
-
-  <div class="box" onclick="showInfo(this)">
-    <h3>عنوان المعلومات الرابعة</h3>
-  </div>
-
-  <div class="hidden-info">
-    <h3>المعلومات الرابعة عن طريقة المشاهدة</h3>
-  </div>
 </div>
 
 <script>
@@ -129,6 +130,10 @@
     });
     hiddenInfo.style.display = hiddenInfo.style.display === 'block' ? 'none' : 'block';
     element.classList.toggle('clicked');
+  }
+
+  function goHome() {
+    window.location.href = "https://www.example.com"; // تغيير الرابط إلى الرابط الخاص بك
   }
 </script>
 
