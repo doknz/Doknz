@@ -48,7 +48,7 @@
       align-items: center;
     }
     .return-box:hover {
-      background-color: #0099FF; /* تغيير لون الزر عند التحويل */
+      background-color: #FFD700; /* تغيير لون الزر عند التحويل */
     }
     .box {
       width: 300px;
@@ -66,7 +66,7 @@
       justify-content: center;
       align-items: center;
     }
-    .box.clicked {
+    .box.active {
       background-color: #FFD700;
       color: #000;
     }
@@ -80,7 +80,7 @@
       box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
       margin-top: -20px; /* الارتفاع أعلى المربع السابق */
     }
-    .box.clicked + .hidden-info {
+    .box.active + .hidden-info {
       display: none;
     }
     h3 {
@@ -95,11 +95,11 @@
 </div>
 
 <div class="container">
-  <div class="return-box" onmouseenter="changeColor(this)" onmouseleave="revertColor(this)" onclick="goHome()">
+  <div class="return-box" onclick="goHome()">
     <h3>رجوع للصفحة الرئيسية</h3>
   </div>
 
-  <div class="box" onmouseover="changeColor(this)" onmouseout="revertColor(this)" onclick="showInfo(this)">
+  <div class="box" onclick="showInfo(this)">
     <h3>عنوان المعلومات الأولى</h3>
   </div>
 
@@ -107,7 +107,7 @@
     <h3>المعلومات الأولى عن طريقة المشاهدة</h3>
   </div>
 
-  <div class="box" onmouseover="changeColor(this)" onmouseout="revertColor(this)" style="margin-top: 40px; display: flex; justify-content: center;" onclick="showInfo(this)">
+  <div class="box" onclick="showInfo(this)" style="margin-top: 40px; display: flex; justify-content: center;">
     <h3>عنوان المعلومات الثانية</h3>
   </div>
 
@@ -120,13 +120,14 @@
 </div>
 
 <script>
-  function changeColor(element) {
-    element.style.backgroundColor = "#FFD700";
-  }
-
-  function revertColor(element) {
-    element.style.backgroundColor = "#FE0000";
-  }
+  document.addEventListener('mousedown', function(event) {
+    const boxes = document.querySelectorAll('.box');
+    boxes.forEach(box => {
+      if (!box.contains(event.target)) {
+        box.classList.remove('active');
+      }
+    });
+  });
 
   function showInfo(element) {
     const hiddenInfo = element.nextElementSibling;
@@ -137,7 +138,7 @@
       }
     });
     hiddenInfo.style.display = hiddenInfo.style.display === 'block' ? 'none' : 'block';
-    element.classList.toggle('clicked');
+    element.classList.toggle('active');
   }
 
   function goHome() {
