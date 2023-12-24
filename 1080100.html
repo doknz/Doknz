@@ -2,17 +2,10 @@
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
-    <title>مربعات مع الوصف</title>
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <title>مربعات مع الصور</title>
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
+        /* أضف الستايلات الخاصة بك هنا */
+        .container {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -20,45 +13,83 @@
             background-color: #f0f0f0;
         }
 
-        .swiper-container {
+        .box {
             width: 300px;
-            height: 300px;
-            margin: 20px;
+            height: 200px;
+            border: 1px solid #ccc;
+            position: relative;
+            overflow: hidden;
         }
 
-        .swiper-slide img {
+        .images {
+            display: flex;
+            transition: transform 0.3s ease;
+        }
+
+        .image {
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+
+        .prev,
+        .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        .next {
+            right: 0;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="box">
-            <div class="swiper-container">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <img src="صورة1.jpg" alt="صورة 1">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="صورة2.jpg" alt="صورة 2">
-                    </div>
-                    <!-- وهكذا لباقي الصور -->
-                </div>
-                <div class="swiper-pagination"></div>
+            <div class="images">
+                <img class="image" src="صورة1.jpg" alt="صورة 1">
+                <img class="image" src="صورة2.jpg" alt="صورة 2">
+                <!-- وهكذا للصور الأخرى داخل المربع -->
             </div>
+            <div class="prev">&lt;</div>
+            <div class="next">&gt;</div>
         </div>
-        <!-- باقي المربعات -->
+        <!-- الصناديق الأخرى -->
     </div>
 
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
-        var swiper = new Swiper('.swiper-container', {
-            loop: true,
-            pagination: {
-                el: '.swiper-pagination',
-            },
+        const boxes = document.querySelectorAll('.box');
+
+        boxes.forEach(box => {
+            const images = box.querySelector('.images');
+            const prev = box.querySelector('.prev');
+            const next = box.querySelector('.next');
+
+            let counter = 0;
+            const imageWidth = box.offsetWidth;
+            const maxCounter = images.childElementCount - 1;
+
+            prev.addEventListener('click', () => {
+                if (counter > 0) {
+                    counter--;
+                    images.style.transform = `translateX(${-counter * imageWidth}px)`;
+                }
+            });
+
+            next.addEventListener('click', () => {
+                if (counter < maxCounter) {
+                    counter++;
+                    images.style.transform = `translateX(${-counter * imageWidth}px)`;
+                }
+            });
         });
     </script>
 </body>
