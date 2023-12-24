@@ -2,7 +2,7 @@
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
-    <title>صفحة الصور مع واتساب الأعمال</title>
+    <title>صفحة معرض الصور مع واتساب الأعمال</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         /* أسلوب تحديد الأطراف بالوسط */
@@ -21,63 +21,95 @@
             margin: 0;
         }
 
-        .frame {
-            width: 70%;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
+        .slideshow-container {
+            max-width: 800px;
+            position: relative;
+            margin: auto;
             overflow: hidden;
+            border: 1px solid #ccc;
         }
 
-        .frame img {
+        .mySlides {
+            display: none;
+        }
+
+        img {
             width: 100%;
             height: auto;
         }
 
-        .title {
-            margin-top: 20px;
-            font-size: 24px;
+        /* أزرار التحكم بالشرائح */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            background-color: rgba(0, 0, 0, 0.5);
         }
 
-        .description {
-            margin-top: 10px;
-            font-size: 18px;
-            color: #666;
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
         }
 
-        .whatsapp-button {
-            display: block;
-            padding: 10px 20px;
-            font-size: 18px;
-            text-decoration: none;
-            background-color: #25D366;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .whatsapp-button:hover {
-            background-color: #128C7E;
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
         }
     </style>
 </head>
 <body>
     <div class="center">
-        <div class="frame">
-            <img src="صورة.jpg" alt="صورة">
+        <div class="slideshow-container">
+            <div class="mySlides">
+                <img src="صورة1.jpg" alt="صورة 1">
+            </div>
+            <div class="mySlides">
+                <img src="صورة2.jpg" alt="صورة 2">
+            </div>
+            <!-- يمكن إضافة المزيد من الصور هنا -->
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
 
         <div class="title">
-            <h2>عنوان الصورة</h2>
+            <h2>عنوان الصور</h2>
         </div>
 
         <div class="description">
-            <p>وصف الصورة يمكن وضعه هنا.</p>
+            <p>وصف الصور يمكن وضعه هنا.</p>
         </div>
 
         <a href="https://api.whatsapp.com/send?phone=رقم الهاتف">
             <button class="whatsapp-button">اطلب الآن عبر الواتساب</button>
         </a>
     </div>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides(n) {
+            let i;
+            const slides = document.getElementsByClassName("mySlides");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex - 1].style.display = "block";
+        }
+    </script>
 </body>
 </html>
