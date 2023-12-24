@@ -1,81 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="ar">
 <head>
-    <title>دوكن</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مربعات مع الوصف</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
-        header {
-            background-color: #333;
-            color: hsl(0, 94%, 46%);
-            text-align: center;
-            padding: 10px;
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
         }
 
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px; /* تم تقليل التباعد الداخلي للمحتوى */
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center; /* توسيط النص */
-            font-size: 18px;
+        .swiper-container {
+            width: 300px;
+            height: 300px;
+            margin: 20px;
         }
 
-        h1 {
-            color: #ff0000;
-        }
-        h4{
-            size: 100%; ;
-        }
-
-        iframe {
+        .swiper-slide img {
             width: 100%;
-            height: 400px;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        li {
-            margin: 10px 0;
-            text-align: center; /* توسيط النص */
-        }
-        a:hover {
-            background-color: gold;
-        }
-        a {
-            text-decoration: none;
-            color: #333;
-            display: block;
-            padding: 20px;
-            border-radius: 5px;
-            background-color: red;
-            transition: background-color 0.3s; /* تغيير لون الخلفية عند التحويل */
-        }
-
-        p {
-            text-align: justify;
+            height: 100%;
+            object-fit: cover;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>دوكن</h1>
-    </header>
-    <div class="container">
-        <iframe src="https://vudeo.co/embed-zbq3b85owrpt.html" frameborder="0" allowfullscreen></iframe>
-        <h2>100 Days to Live (2021) - 1080p</h2>
-        <h3>لو السيرفر مو شغال يا ليت ترسل لنا على حساباتنا عشان نحدثه على طول<br><span>و خليك متابع معنا على حساباتنا عشان لو قفل الموقع نعطيك رابط موقعنا الجديد </span></h3>
-    <a href="100.html">رجوع</a>
-</div>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="صورة1.jpg" alt="صورة 1">
+            </div>
+            <div class="swiper-slide">
+                <img src="صورة2.jpg" alt="صورة 2">
+            </div>
+            <!-- وهكذا لباقي الصور -->
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+            },
+        });
+    </script>
 </body>
 </html>
