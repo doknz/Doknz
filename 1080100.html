@@ -5,27 +5,70 @@
     <title>عنوان الصفحة</title>
     <style>
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            font-family: Arial, sans-serif;
+            text-align: center;
             margin: 0;
+            padding: 0;
+        }
+
+        header {
+            padding: 20px;
+        }
+
+        iframe {
+            width: 80%;
+            height: 400px;
+            margin: 20px auto;
+            display: block;
+        }
+
+        .description {
+            margin-bottom: 20px;
+        }
+
+        .whatsapp-btn, .back-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            color: white;
         }
 
         .whatsapp-btn {
-            padding: 10px 20px;
             background-color: #4CAF50;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
         }
 
-        .whatsapp-btn:hover {
-            background-color: #45a049;
+        .back-btn {
+            background-color: #4CAF50;
+            margin-right: 10px;
         }
     </style>
 </head>
 <body>
-    <a class="whatsapp-btn" href="https://wa.me/رقم الهاتف?text=رسالة محددة">اطلب الآن عبر الواتساب</a>
+    <header>
+        <!-- وضع اللوغو الخاص بك -->
+        <img src="path/to/your/logo.png" alt="اسم موقعك">
+    </header>
+
+    <iframe src="https://example.com" allowfullscreen></iframe>
+
+    <div class="description">
+        <h3>عنوان الصورة</h3>
+        <p>وصف الصورة يمكن أن يكون هنا.</p>
+    </div>
+
+    <a class="whatsapp-btn" href="https://wa.me/رقم الهاتف?text=رسالة محددة">اطلب عبر الواتساب</a>
+    <a class="back-btn" href="#">رجوع</a>
+
+    <script>
+        // إضافة سكريبت لإعداد رسالة جاهزة عند النقر على الزر
+        const whatsappBtn = document.querySelector('.whatsapp-btn');
+        whatsappBtn.addEventListener('click', function(event) {
+            event.preventDefault();
+            const message = encodeURIComponent('رسالة جاهزة');
+            window.open(`https://wa.me/رقم الهاتف?text=${message}`, '_blank');
+        });
+    </script>
 </body>
 </html>
