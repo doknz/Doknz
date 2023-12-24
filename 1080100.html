@@ -2,7 +2,7 @@
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
-    <title>مربعات مع الصور</title>
+    <title>مربع مع الصور</title>
     <style>
         /* أضف الستايلات الخاصة بك هنا */
         .container {
@@ -23,8 +23,7 @@
 
         .images {
             display: flex;
-            transition: transform 0.3s ease;
-            height: 100%;
+            transition: transform 1s ease-in-out;
         }
 
         .image {
@@ -51,19 +50,12 @@
 
         boxes.forEach(box => {
             const images = box.querySelector('.images');
-
-            let counter = 1;
             const imageWidth = box.offsetWidth;
-            const maxCounter = images.childElementCount;
+            let counter = 0;
 
             setInterval(() => {
-                if (counter < maxCounter) {
-                    images.style.transform = `translateX(${-counter * imageWidth}px)`;
-                    counter++;
-                } else {
-                    images.style.transform = 'translateX(0)';
-                    counter = 1;
-                }
+                images.style.transform = `translateX(${-counter * imageWidth}px)`;
+                counter = (counter + 1) % images.childElementCount;
             }, 3000); // تغيير الصور كل 3 ثواني (يمكنك تعديل هذا الرقم)
         });
     </script>
