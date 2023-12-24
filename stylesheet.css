@@ -1,6 +1,6 @@
 body {
     /* الأنماط المختلفة للصور */
-    background-image: url('صورة1.jpg');
+    background-image: url('Screenshot_20231224_163745_com.instagram.android.jpg');
     background-size: cover;
     background-position: center;
     animation: changeBackground 60s infinite; /* تغيير الخلفية كل دقيقة */
