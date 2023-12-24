@@ -1,71 +1,169 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>مربعات مع الوصف</title>
+<head>
     <meta charset="UTF-8">
-    <title>مربعات مع الصور</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>عنوان الصفحة</title>
+    <link rel="stylesheet" href="stylesheet.css"> <!-- اسم ملف الأنماط -->
+</head>
     <style>
-        /* أضف الستايلات الخاصة بك هنا */
-        .container {
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             background-color: #f0f0f0;
+            flex-direction: column;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            max-width: 800px;
+            margin: 20px;
         }
 
         .box {
-            width: 300px;
+            width: 200px;
             height: 200px;
-            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+            margin: 10px;
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+            position: relative;
             overflow: hidden;
-            margin-bottom: 20px; /* تباعد بين المربعات */
+            cursor: pointer;
+            transition: transform 0.3s ease;
         }
 
-        .images {
-            display: flex;
-            flex-direction: column; /* ترتيب الصور بشكل عمودي */
-            transition: transform 1s ease-in-out;
-        }
-
-        .image {
+        .box img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .box:hover {
+            transform: translateY(-10px);
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .box:hover .overlay {
+            opacity: 1;
+        }
+
+        .overlay-content {
+            color: white;
+            padding: 20px;
+            text-align: center;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="box">
-            <div class="images">
-                <img class="image" src="صورة1.jpg" alt="صورة 1">
+<a href="1080100.html">
+            <img src="صورة1.jpg" alt="صورة 1">
+            <div class="overlay">
+                <div class="overlay-content">
+                    <h3>عنوان المربع الأول</h3>
+                    <p>وصف المربع الأول يمكن أن يكون هنا.</p>
+                </div>
+            </div>
+</a>
+        </div>
+        <div class="box">
+            <img src="صورة2.jpg" alt="صورة 2">
+            <div class="overlay">
+                <div class="overlay-content">
+                    <h3>عنوان المربع الثاني</h3>
+                    <p>وصف المربع الثاني يمكن أن يكون هنا.</p>
+                </div>
             </div>
         </div>
         <div class="box">
-            <div class="images">
-                <img class="image" src="صورة2.jpg" alt="صورة 2">
+            <img src="صورة3.jpg" alt="صورة 3">
+            <div class="overlay">
+                <div class="overlay-content">
+                    <h3>عنوان المربع الثالث</h3>
+                    <p>وصف المربع الثالث يمكن أن يكون هنا.</p>
+                </div>
             </div>
         </div>
         <div class="box">
-            <div class="images">
-                <img class="image" src="صورة3.jpg" alt="صورة 3">
+            <img src="صورة4.jpg" alt="صورة 4">
+            <div class="overlay">
+                <div class="overlay-content">
+                    <h3>عنوان المربع الرابع</h3>
+                    <p>وصف المربع الرابع يمكن أن يكون هنا.</p>
+                </div>
+            </div>
+        </div>
+        <!-- الأربعة المربعات الإضافية -->
+        <div class="box">
+            <img src="صورة5.jpg" alt="صورة 5">
+            <div class="overlay">
+                <div class="overlay-content">
+                    <h3>عنوان المربع الخامس</h3>
+                    <p>وصف المربع الخامس يمكن أن يكون هنا.</p>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <img src="صورة6.jpg" alt="صورة 6">
+            <div class="overlay">
+                <div class="overlay-content">
+                    <h3>عنوان المربع السادس</h3>
+                    <p>وصف المربع السادس يمكن أن يكون هنا.</p>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <img src="صورة7.jpg" alt="صورة 7">
+            <div class="overlay">
+                <div class="overlay-content">
+                    <h3>عنوان المربع السابع</h3>
+                    <p>وصف المربع السابع يمكن أن يكون هنا.</p>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <img src="صورة8.jpg" alt="صورة 8">
+            <div class="overlay">
+                <div class="overlay-content">
+                    <h3>عنوان المربع الثامن</h3>
+                    <p>وصف المربع الثامن يمكن أن يكون هنا.</p>
+                </div>
             </div>
         </div>
     </div>
-
-    <script>
-        const boxes = document.querySelectorAll('.box');
-
-        boxes.forEach(box => {
-            const images = box.querySelector('.images');
-            const imageHeight = box.offsetHeight;
-            let counter = 0;
-
-            setInterval(() => {
-                images.style.transform = `translateY(${-counter * imageHeight}px)`;
-                counter = (counter + 1) % images.childElementCount;
-            }, 3000); // تغيير الصور كل 3 ثواني (يمكنك تعديل هذا الرقم)
-        });
-    </script>
 </body>
 </html>
