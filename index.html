@@ -4,14 +4,28 @@
     <meta charset="UTF-8">
     <title>مربعات مع الوصف</title>
     <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
         .container {
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
             align-items: center;
             flex-wrap: wrap;
             max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
+            margin: 20px;
         }
 
         .box {
@@ -22,13 +36,54 @@
             text-align: center;
             padding: 20px;
             border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
         }
 
         .box img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            margin-bottom: 10px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .box:hover img {
+            transform: scale(1.1);
+        }
+
+        .box .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .box:hover .overlay {
+            opacity: 1;
+        }
+
+        .box h3,
+        .box p {
+            color: white;
+            margin: 5px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .box:hover h3,
+        .box:hover p {
+            opacity: 1;
         }
     </style>
 </head>
@@ -36,24 +91,12 @@
     <div class="container">
         <div class="box">
             <img src="صورة1.jpg" alt="صورة 1">
-            <h3>عنوان المربع الأول</h3>
-            <p>وصف المربع الأول يمكن أن يكون هنا.</p>
+            <div class="overlay">
+                <h3>عنوان المربع الأول</h3>
+                <p>وصف المربع الأول يمكن أن يكون هنا.</p>
+            </div>
         </div>
-        <div class="box">
-            <img src="صورة2.jpg" alt="صورة 2">
-            <h3>عنوان المربع الثاني</h3>
-            <p>وصف المربع الثاني يمكن أن يكون هنا.</p>
-        </div>
-        <div class="box">
-            <img src="صورة3.jpg" alt="صورة 3">
-            <h3>عنوان المربع الثالث</h3>
-            <p>وصف المربع الثالث يمكن أن يكون هنا.</p>
-        </div>
-        <div class="box">
-            <img src="صورة4.jpg" alt="صورة 4">
-            <h3>عنوان المربع الرابع</h3>
-            <p>وصف المربع الرابع يمكن أن يكون هنا.</p>
-        </div>
+        <!-- الثلاثة المربعات الأخرى تأتي هنا -->
     </div>
 </body>
 </html>
