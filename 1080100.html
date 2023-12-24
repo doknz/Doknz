@@ -17,37 +17,20 @@
             width: 300px;
             height: 200px;
             border: 1px solid #ccc;
-            position: relative;
             overflow: hidden;
+            position: relative;
         }
 
         .images {
             display: flex;
             transition: transform 0.3s ease;
+            height: 100%;
         }
 
         .image {
             width: 100%;
             height: 100%;
             object-fit: cover;
-        }
-
-        .prev,
-        .next {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            padding: 10px;
-            background-color: rgba(255, 255, 255, 0.5);
-            cursor: pointer;
-        }
-
-        .prev {
-            left: 0;
-        }
-
-        .next {
-            right: 0;
         }
     </style>
 </head>
@@ -59,8 +42,6 @@
                 <img class="image" src="صورة2.jpg" alt="صورة 2">
                 <!-- وهكذا للصور الأخرى داخل المربع -->
             </div>
-            <div class="prev">&lt;</div>
-            <div class="next">&gt;</div>
         </div>
         <!-- الصناديق الأخرى -->
     </div>
@@ -70,26 +51,20 @@
 
         boxes.forEach(box => {
             const images = box.querySelector('.images');
-            const prev = box.querySelector('.prev');
-            const next = box.querySelector('.next');
 
-            let counter = 0;
+            let counter = 1;
             const imageWidth = box.offsetWidth;
-            const maxCounter = images.childElementCount - 1;
+            const maxCounter = images.childElementCount;
 
-            prev.addEventListener('click', () => {
-                if (counter > 0) {
-                    counter--;
-                    images.style.transform = `translateX(${-counter * imageWidth}px)`;
-                }
-            });
-
-            next.addEventListener('click', () => {
+            setInterval(() => {
                 if (counter < maxCounter) {
-                    counter++;
                     images.style.transform = `translateX(${-counter * imageWidth}px)`;
+                    counter++;
+                } else {
+                    images.style.transform = 'translateX(0)';
+                    counter = 1;
                 }
-            });
+            }, 3000); // تغيير الصور كل 3 ثواني (يمكنك تعديل هذا الرقم)
         });
     </script>
 </body>
