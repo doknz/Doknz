@@ -2,7 +2,6 @@
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>مربعات مع الصور</title>
     <style>
         /* أضف الستايلات الخاصة بك هنا */
@@ -19,11 +18,12 @@
             height: 200px;
             border: 1px solid #ccc;
             overflow: hidden;
-            position: relative;
+            margin-bottom: 20px; /* تباعد بين المربعات */
         }
 
         .images {
             display: flex;
+            flex-direction: column; /* ترتيب الصور بشكل عمودي */
             transition: transform 1s ease-in-out;
         }
 
@@ -39,19 +39,16 @@
         <div class="box">
             <div class="images">
                 <img class="image" src="صورة1.jpg" alt="صورة 1">
-                <!-- وهكذا للصور الأخرى داخل المربع -->
             </div>
         </div>
         <div class="box">
             <div class="images">
                 <img class="image" src="صورة2.jpg" alt="صورة 2">
-                <!-- وهكذا للصور الأخرى داخل المربع -->
             </div>
         </div>
         <div class="box">
             <div class="images">
                 <img class="image" src="صورة3.jpg" alt="صورة 3">
-                <!-- وهكذا للصور الأخرى داخل المربع -->
             </div>
         </div>
     </div>
@@ -61,11 +58,11 @@
 
         boxes.forEach(box => {
             const images = box.querySelector('.images');
-            const imageWidth = box.offsetWidth;
+            const imageHeight = box.offsetHeight;
             let counter = 0;
 
             setInterval(() => {
-                images.style.transform = `translateX(${-counter * imageWidth}px)`;
+                images.style.transform = `translateY(${-counter * imageHeight}px)`;
                 counter = (counter + 1) % images.childElementCount;
             }, 3000); // تغيير الصور كل 3 ثواني (يمكنك تعديل هذا الرقم)
         });
