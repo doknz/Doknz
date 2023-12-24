@@ -2,12 +2,17 @@
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
-    <title>صفحة معرض الصور مع واتساب الأعمال</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>عنوان الصفحة</title>
     <style>
-        /* أسلوب تحديد الأطراف بالوسط */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
         .whatsapp-btn {
-            display: inline-block;
             padding: 10px 20px;
             background-color: #4CAF50;
             color: white;
@@ -18,112 +23,9 @@
         .whatsapp-btn:hover {
             background-color: #45a049;
         }
-
-        .center {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            height: 100vh;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 20px;
-            margin: 0;
-        }
-
-        .frame {
-            width: 70%;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .slideshow-container {
-            display: flex;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            -webkit-overflow-scrolling: touch;
-        }
-
-        .mySlides {
-            scroll-snap-align: start;
-            flex-shrink: 0;
-            width: 100%;
-            height: auto;
-        }
-
-        img {
-            width: 100%;
-            height: auto;
-        }
-
-        /* العنوان والوصف */
-        .title {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        .description {
-            font-size: 18px;
-            color: #666;
-            margin-bottom: 20px;
-        }
-
-        /* زر واتساب */
-        .whatsapp-button, .back-button {
-            display: inline-block;
-            padding: 10px 20px;
-            font-size: 18px;
-            text-decoration: none;
-            background-color: #25D366;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-            margin-bottom: 20px;
-        }
-
-        .whatsapp-button:hover, .back-button:hover {
-            background-color: #128C7E;
-        }
     </style>
 </head>
 <body>
-    <div class="center">
-        <div class="frame">
-            <div class="slideshow-container">
-                <div class="mySlides">
-                    <img src="صورة1.jpg" alt="صورة 1">
-                </div>
-                <div class="mySlides">
-                    <img src="صورة2.jpg" alt="صورة 2">
-                </div>
-                <!-- يمكن إضافة المزيد من الصور هنا -->
-            </div>
-        </div>
-
-        <div class="title">
-            <h2>عنوان الصور</h2>
-        </div>
-
-        <div class="description">
-            <p>وصف الصور يمكن وضعه هنا.</p>
-        </div>
-
     <a class="whatsapp-btn" href="https://wa.me/رقم الهاتف?text=رسالة محددة">اطلب الآن عبر الواتساب</a>
-
-  
-        <a href="#" class="back-button" onclick="goBack()">رجوع</a>
-    </div>
-
-    <script>
-        function goBack() {
-            window.history.back();
-        }
-    </script>
 </body>
 </html>
