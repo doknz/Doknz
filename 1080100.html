@@ -5,15 +5,25 @@
     <title>صفحة الصور مع واتساب الأعمال</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
+        /* أسلوب تحديد الأطراف بالوسط */
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+
         body {
             font-family: Arial, sans-serif;
             text-align: center;
             padding: 20px;
+            margin: 0;
         }
 
         .frame {
             width: 70%;
-            margin: 20px auto;
+            margin-bottom: 20px;
             border: 1px solid #ccc;
             overflow: hidden;
         }
@@ -36,7 +46,6 @@
 
         .whatsapp-button {
             display: block;
-            margin-top: 20px;
             padding: 10px 20px;
             font-size: 18px;
             text-decoration: none;
@@ -53,20 +62,22 @@
     </style>
 </head>
 <body>
-    <div class="frame">
-        <img src="صورة.jpg" alt="صورة">
-    </div>
+    <div class="center">
+        <div class="frame">
+            <img src="صورة.jpg" alt="صورة">
+        </div>
 
-    <div class="title">
-        <h2>عنوان الصورة</h2>
-    </div>
+        <div class="title">
+            <h2>عنوان الصورة</h2>
+        </div>
 
-    <div class="description">
-        <p>وصف الصورة يمكن وضعه هنا.</p>
-    </div>
+        <div class="description">
+            <p>وصف الصورة يمكن وضعه هنا.</p>
+        </div>
 
-    <a href="https://api.whatsapp.com/send?phone=+966571774181">
-        <button class="whatsapp-button">اطلب الآن عبر الواتساب</button>
-    </a>
+        <a href="https://api.whatsapp.com/send?phone=رقم الهاتف">
+            <button class="whatsapp-button">اطلب الآن عبر الواتساب</button>
+        </a>
+    </div>
 </body>
 </html>
