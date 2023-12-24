@@ -1,0 +1,15 @@
+body {
+    /* الأنماط المختلفة للصور */
+    background-image: url('صورة1.jpg');
+    background-size: cover;
+    background-position: center;
+    animation: changeBackground 60s infinite; /* تغيير الخلفية كل دقيقة */
+}
+
+@keyframes changeBackground {
+    0% { background-image: url('صورة1.jpg'); }
+    25% { background-image: url('صورة2.jpg'); }
+    50% { background-image: url('صورة3.jpg'); }
+    75% { background-image: url('صورة4.jpg'); }
+    100% { background-image: url('صورة5.jpg'); }
+}
